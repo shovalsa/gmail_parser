@@ -7,6 +7,7 @@ Still missing: encoding, actual parsing of data.
 
 import imaplib as imap
 import email
+from email.header import decode_header
 from re import escape
 
 
@@ -77,7 +78,7 @@ class GmailConnection():
             attsList.append((fieldNames[0], msg[0])) #uid
             attsList.append((fieldNames[1], msg[1]['Date'])) #date_sent
             attsList.append((fieldNames[2], msg[1]['From'])) #sender
-            attsList.append((fieldNames[3], msg[1]['Subject'])) #sender
+            attsList.append((fieldNames[3], msg[1]['Subject'])) #subject
             body = None
             html = None
             if msg[1].get_content_maintype() == "multipart":

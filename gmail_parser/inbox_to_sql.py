@@ -1,5 +1,5 @@
 import sqlite3
-from gmail_handler.connect_and_extract import GmailConnection
+from gmail_parser.connect_and_extract import GmailConnection
 
 class InboxToSQL():
     def __init__(self, dbName, inbox):
